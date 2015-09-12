@@ -3,7 +3,7 @@
 Summary:	Dynamic Lua binding to GObject libraries using GObject-Introspection
 Name:		lua-lgi
 Version:	0.7.1
-Release:	5
+Release:	6
 License:	MIT
 Group:		Development/Other
 Url:		http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
