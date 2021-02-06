@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 %define lua_version 5.3
 %define _disable_lto 1
 
