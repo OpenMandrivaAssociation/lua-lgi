@@ -29,8 +29,7 @@ libraries. It allows using GObject-based libraries directly from Lua.
 
 %build
 export CFLAGS="%{optflags} -fPIC"
-%make
+%make_build
 
 %install
-%makeinstall_std LUA_SHAREDIR=%{_datadir}/lua/%{lua_version} LUA_LIBDIR=%{_libdir}/lua/%{lua_version}
-
+%make_install LUA_SHAREDIR=%{_datadir}/lua/%{lua_version} LUA_LIBDIR=%{_libdir}/lua/%{lua_version}
