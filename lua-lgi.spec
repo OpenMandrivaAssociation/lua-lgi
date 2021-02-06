@@ -1,10 +1,10 @@
-%define lua_version 5.1
+%define lua_version 5.3
 %define _disable_lto 1
 
 Summary:	Dynamic Lua binding to GObject libraries using GObject-Introspection
 Name:		lua-lgi
 Version:	0.9.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Other
 Url:		http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
@@ -32,4 +32,7 @@ export CFLAGS="%{optflags} -fPIC"
 %make_build
 
 %install
-%make_install LUA_SHAREDIR=%{_datadir}/lua/%{lua_version} LUA_LIBDIR=%{_libdir}/lua/%{lua_version}
+%make_install \
+    PREFIX=%{_prefix} \
+    LUA_LIBDIR=%{lualibdir} \
+    LUA_SHAREDIR=%{luapkgdir}
