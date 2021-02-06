@@ -12,24 +12,19 @@ Url:		http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
 Source0:	https://github.com/pavouk/lgi/archive/%{version}/lgi-%{version}.tar.gz
 BuildRequires:	pkgconfig(lua)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
+BuildRequires:  pkgconfig(gmodule-2.0)
+BuildRequires:  pkgconfig(libffi)
 
 %description
 LGI is gobject-introspection based dynamic Lua binding to GObject based
 libraries. It allows using GObject-based libraries directly from Lua.
 
-%files
-%doc docs/
-%doc README.md
-#{_datadir}/lua/%{lua_version}/lgi*
-#{_libdir}/lua/%{lua_version}/lgi
-
-#----------------------------------------------------------------------------
-
 %prep
-%setup -q -n lgi-%{version}
+%setup -q -n %{oname}-%{version}
+%autopatch -p1
 
 %build
-export CFLAGS="%{optflags} -fPIC"
+%set_build_flags
 %make_build
 
 %install
@@ -37,3 +32,8 @@ export CFLAGS="%{optflags} -fPIC"
     PREFIX=%{_prefix} \
     LUA_LIBDIR=%{lualibdir} \
     LUA_SHAREDIR=%{luapkgdir}
+
+%files
+%doc README.md docs/*
+%{lualibdir}/lgi/corelgilua52.so
+%{luapkgdir}/lgi*
