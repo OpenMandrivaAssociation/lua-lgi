@@ -20,7 +20,7 @@ LGI is gobject-introspection based dynamic Lua binding to GObject based
 libraries. It allows using GObject-based libraries directly from Lua.
 
 %prep
-%setup -q -n %{oname}-%{version}
+%setup -q -n lgi-%{version}
 %autopatch -p1
 
 %build
