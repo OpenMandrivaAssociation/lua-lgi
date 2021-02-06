@@ -19,8 +19,8 @@ libraries. It allows using GObject-based libraries directly from Lua.
 %files
 %doc docs/
 %doc README.md
-%{_datadir}/lua/%{lua_version}/lgi*
-%{_libdir}/lua/%{lua_version}/lgi
+#{_datadir}/lua/%{lua_version}/lgi*
+#{_libdir}/lua/%{lua_version}/lgi
 
 #----------------------------------------------------------------------------
 
