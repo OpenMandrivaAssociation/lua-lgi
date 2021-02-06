@@ -3,12 +3,12 @@
 
 Summary:	Dynamic Lua binding to GObject libraries using GObject-Introspection
 Name:		lua-lgi
-Version:	0.7.1
-Release:	7
+Version:	0.9.2
+Release:	1
 License:	MIT
 Group:		Development/Other
 Url:		http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
-Source0:	lgi-%{version}.tar.gz
+Source0:	https://github.com/pavouk/lgi/archive/%{version}/lgi-%{version}.tar.gz
 BuildRequires:	pkgconfig(lua)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 
@@ -29,8 +29,7 @@ libraries. It allows using GObject-based libraries directly from Lua.
 
 %build
 export CFLAGS="%{optflags} -fPIC"
-%make
+%make_build
 
 %install
-%makeinstall_std LUA_SHAREDIR=%{_datadir}/lua/%{lua_version} LUA_LIBDIR=%{_libdir}/lua/%{lua_version}
-
+%make_install LUA_SHAREDIR=%{_datadir}/lua/%{lua_version} LUA_LIBDIR=%{_libdir}/lua/%{lua_version}
