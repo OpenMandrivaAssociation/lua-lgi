@@ -1,5 +1,5 @@
 %global debug_package %{nil}
-%define lua_version 5.1
+%define lua_version 5.3
 %define _disable_lto 1
 
 Summary:	Dynamic Lua binding to GObject libraries using GObject-Introspection
