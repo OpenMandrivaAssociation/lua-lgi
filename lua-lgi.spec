@@ -12,8 +12,8 @@ Url:		http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
 Source0:	https://github.com/pavouk/lgi/archive/%{version}/lgi-%{version}.tar.gz
 BuildRequires:	pkgconfig(lua)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
-BuildRequires:  pkgconfig(gmodule-2.0)
-BuildRequires:  pkgconfig(libffi)
+#BuildRequires:  pkgconfig(gmodule-2.0)
+#BuildRequires:  pkgconfig(libffi)
 
 %description
 LGI is gobject-introspection based dynamic Lua binding to GObject based
