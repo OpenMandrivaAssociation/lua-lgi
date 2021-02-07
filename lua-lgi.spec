@@ -25,6 +25,7 @@ libraries. It allows using GObject-based libraries directly from Lua.
 
 %build
 %set_build_flags
+export CFLAGS="%{optflags} -fPIC"
 %make_build
 
 %install
