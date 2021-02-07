@@ -35,5 +35,5 @@ export CFLAGS="%{optflags} -fPIC"
 
 %files
 %doc README.md docs/*
-%{lualibdir}/lgi/corelgilua52.so
-%{luapkgdir}/lgi*
+#{lualibdir}/lgi/corelgilua52.so
+#{luapkgdir}/lgi*
