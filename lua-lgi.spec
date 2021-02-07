@@ -24,16 +24,13 @@ libraries. It allows using GObject-based libraries directly from Lua.
 %autopatch -p1
 
 %build
-%set_build_flags
+export CFLAGS="%{optflags} -fPIC"
 %make_build
 
 %install
-%make_install \
-    PREFIX=%{_prefix} \
-    LUA_LIBDIR=%{lualibdir} \
-    LUA_SHAREDIR=%{luapkgdir}
+%make_install LUA_SHAREDIR=%{_datadir}/lua/%{lua_version} LUA_LIBDIR=%{_libdir}/lua/%{lua_version}
 
 %files
 %doc README.md docs/*
-%{lualibdir}/lgi/corelgilua52.so
-%{luapkgdir}/lgi*
+%{_libdir}/lua/5.3/lgi/corelgilua51.so
+%{_datadir}/lua/5.3/lgi*
