@@ -8,7 +8,7 @@ Version:	0.9.2
 Release:	3
 License:	MIT
 Group:		Development/Other
-Url:		http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
+Url:		https://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
 Source0:	https://github.com/pavouk/lgi/archive/%{version}/lgi-%{version}.tar.gz
 BuildRequires:	pkgconfig(lua)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
