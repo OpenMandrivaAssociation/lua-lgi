@@ -1,5 +1,5 @@
 %global debug_package %{nil}
-%define lua_version 5.3
+%define lua_version 5.4
 %define _disable_lto 1
 
 Summary:	Dynamic Lua binding to GObject libraries using GObject-Introspection
@@ -15,13 +15,15 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(gmodule-2.0)
 BuildRequires:  pkgconfig(libffi)
 
+%patchlist
+https://github.com/lgi-devs/lgi/commit/5cfd42c386d3adae6d211fbb4011179c3c141b04.patch
+
 %description
 LGI is gobject-introspection based dynamic Lua binding to GObject based
 libraries. It allows using GObject-based libraries directly from Lua.
 
 %prep
-%setup -q -n lgi-%{version}
-%autopatch -p1
+%autosetup -p1 -n lgi-%{version}
 
 %build
 export CFLAGS="%{optflags} -fPIC"
@@ -32,5 +34,5 @@ export CFLAGS="%{optflags} -fPIC"
 
 %files
 %doc README.md docs/*
-%{_libdir}/lua/5.3/lgi/corelgilua51.so
-%{_datadir}/lua/5.3/lgi*
+%{_libdir}/lua/%{lua_version}/lgi/corelgilua51.so
+%{_datadir}/lua/%{lua_version}/lgi*
