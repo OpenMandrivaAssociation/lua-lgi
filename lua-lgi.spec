@@ -10,6 +10,7 @@ License:	MIT
 Group:		Development/Other
 Url:		https://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
 Source0:	https://github.com/pavouk/lgi/archive/%{version}/lgi-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	pkgconfig(lua)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(gmodule-2.0)
